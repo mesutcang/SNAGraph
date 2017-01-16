@@ -1,6 +1,7 @@
 # SNAGraph
 Social Network Analysis Graph algorithms. Project simply calculates centrality metrics and draw charts accordingly for giving graph. Sample centrality metrics include degree centrality, betweenness centrality, closeness centrality, eigenvector centrality and page rank
 
+For detailed information about the project please read the [Detailed description document](./DetailedDescription.md)
 
 ## Project Dependencies
 

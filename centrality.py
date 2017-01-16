@@ -107,7 +107,7 @@ def calculatePageRankCentralityUsingNetworkX(session):
 		calculates pagerank using Neo4j session.
 	"""
 	print "page rank using networkx:"
-	results = cypher.run("MATCH (a:Deneme)-[r:relation_x]-(b:Deneme) RETURN a.fullName, b.fullName,r", conn="http://neo4j:123456@localhost:7474/db/data")
+	results = cypher.run("MATCH (a:Employee)-[r:appreciation]-(b:Employee) RETURN a.fullName, b.fullName,r", conn="http://neo4j:123456@localhost:7474/db/data")
 	g = results.get_graph()
 	data = nx.pagerank_numpy(g)
 	print data

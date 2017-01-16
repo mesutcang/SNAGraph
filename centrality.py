@@ -102,6 +102,19 @@ def calculatePageRankCentrality(session):
 	plt.figure(5)
 	drawChart(data,"Page Rank")
 
+def calculatePageRankCentralityUsingNetworkX(session):
+	"""
+		calculates pagerank using Neo4j session.
+	"""
+	print "page rank using networkx:"
+	results = cypher.run("MATCH (a:Deneme)-[r:relation_x]-(b:Deneme) RETURN a.fullName, b.fullName,r", conn="http://neo4j:123456@localhost:7474/db/data")
+	g = results.get_graph()
+	data = nx.pagerank_numpy(g)
+	print data
+	#give chart a number and draw chart according the data
+	plt.figure(6)
+	drawChart(data,"Page Rank using NetworkX")
+
 def drawChart(data, title):
 	"""
 		draw bar chart according the data and uses given title.
@@ -131,11 +144,12 @@ def main(session):
 	"""
 		Main method to run the centrality metrics one by one.
 	"""
-	calculateDegreeCentrality(session)
-	calculateBetweennessCentrality(session)
-	calculateClosenessCentrality(session)
-	calculateEigenvectorCentrality(session)
-	calculatePageRankCentrality(session)
+	#calculateDegreeCentrality(session)
+	#calculateBetweennessCentrality(session)
+	#calculateClosenessCentrality(session)
+	#calculateEigenvectorCentrality(session)
+	#calculatePageRankCentrality(session)
+	calculatePageRankCentralityUsingNetworkX(session)
 	#show the charts and wait.
 	plt.show()
 	

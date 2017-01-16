@@ -67,4 +67,5 @@ Using Snap! software would improve the credibility and reliability of the result
 
 # References 
 [1] https://www.cl.cam.ac.uk/teaching/1314/L109/stna-lecture3.pdf
+
 [2] Analyzing the Social Web by Jennifer Golbeck

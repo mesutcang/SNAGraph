@@ -1,9 +1,7 @@
 
 # SOCIAL NETWORK ANALYSIS PROJECT REPORT
 ## By
-## Mesut Can GÜRLE
-## Emre KARAGÖZ
-## Altay SEYHAN
+## Mesut Can GÜRLE, Emre KARAGÖZ and Altay SEYHAN
 
 
 
@@ -18,12 +16,19 @@ The purpose of the project is to understand the importance of graphs in social n
 ## Tools and Libraries Used 
 
 Neo4j 3.1 (For Individuals, non-Business usage)
+
 Python 2.7.12
+
 Networkx
+
 Git
+
 Numpy
+
 neo4j.v1 
+
 matplotlib
+
 cypher
 
 # Understanding the Data and the Process

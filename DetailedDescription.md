@@ -11,11 +11,11 @@
 
 Since graphs are frequently used throughout the Intoduction to Social Network Analysis, the project is assigned centering Neo4j which is a graph database management system which allows the users to understand, query and manipulate the data more efficiently and quickly.
 
-Purpose of the Project
+## Purpose of the Project
 
 The purpose of the project is to understand the importance of graphs in social networks and how to analyze them.
 
-# Tools and Libraries Used 
+## Tools and Libraries Used 
 
 Neo4j 3.1 (For Individuals, non-Business usage)
 Python 2.7.12

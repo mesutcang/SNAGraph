@@ -1,6 +1,5 @@
 from neo4j.v1 import GraphDatabase, basic_auth
 from collections import OrderedDict
-from pyx import *
 import networkx as nx
 import matplotlib.pyplot as plt
 import numpy as np

@@ -144,11 +144,11 @@ def main(session):
 	"""
 		Main method to run the centrality metrics one by one.
 	"""
-	#calculateDegreeCentrality(session)
-	#calculateBetweennessCentrality(session)
-	#calculateClosenessCentrality(session)
-	#calculateEigenvectorCentrality(session)
-	#calculatePageRankCentrality(session)
+	calculateDegreeCentrality(session)
+	calculateBetweennessCentrality(session)
+	calculateClosenessCentrality(session)
+	calculateEigenvectorCentrality(session)
+	calculatePageRankCentrality(session)
 	calculatePageRankCentralityUsingNetworkX(session)
 	#show the charts and wait.
 	plt.show()

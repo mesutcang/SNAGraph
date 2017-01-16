@@ -56,7 +56,7 @@ WHERE (a:Employee)-[:TAKDIR_ALDI]->(t:Takdir)<-[:TAKDIR_ETTI]-(b:Employee)
 CREATE (a)-[r:relation_x]->(b)
 RETURN r
 	Thus we had created the new relation for ease of use.
-“Calculation and reporting of centrality metrics for different types of relations between employees (degree centrality, closeness centrality, betweenness centrality, eigenvector centrality, PageRank)” topic was chosen to be implemented.
+Calculation and reporting of centrality metrics for different types of relations between employees (degree centrality, closeness centrality, betweenness centrality, eigenvector centrality, PageRank)” topic was chosen to be implemented.
 For this, the centralities must be remembered:
 
 # Results and Discussion

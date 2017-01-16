@@ -17,19 +17,13 @@ The purpose of the project is to understand the importance of graphs in social n
 
 Neo4j 3.1 (For Individuals, non-Business usage)
 
-Python 2.7.12
-
-Networkx
-
-Git
-
-Numpy
-
-neo4j.v1 
-
-matplotlib
-
-cypher
+- Python 2.7.12
+- Networkx
+- Git
+- Numpy
+- neo4j.v1 
+- matplotlib
+- cypher
 
 # Understanding the Data and the Process
 
@@ -66,8 +60,8 @@ For this, the centralities must be remembered:
 
 # Results and Discussion
 
-	By looking at overall results one can easily infer that the node with the most degree centralities are the core and top employees at the firm such as directors and headchiefs of various departments.
-	Another important conclusion might be that the seperated nodes from the hull of the concentrated nodes indicate that this comparatively smaller group of employees should be working apart from the other employees and interacting them with little to none degree which proposes these employees to be an outsource equip working in another environment.
+By looking at overall results one can easily infer that the node with the most degree centralities are the core and top employees at the firm such as directors and headchiefs of various departments.
+Another important conclusion might be that the seperated nodes from the hull of the concentrated nodes indicate that this comparatively smaller group of employees should be working apart from the other employees and interacting them with little to none degree which proposes these employees to be an outsource equip working in another environment.
 Using Snap! software would improve the credibility and reliability of the results and it would ensure the similar if not the same results in case of a bigger data was used in the project.
 
 # References 

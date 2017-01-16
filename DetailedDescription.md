@@ -15,8 +15,7 @@ The purpose of the project is to understand the importance of graphs in social n
 
 ## Tools and Libraries Used 
 
-Neo4j 3.1 (For Individuals, non-Business usage)
-
+- Neo4j 3.1 (For Individuals, non-Business usage)
 - Python 2.7.12
 - Networkx
 - Git

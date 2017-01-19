@@ -12,7 +12,7 @@ def calculateDegreeCentrality(session):
 	"""
 	print "degree centrality:"
 	# find the nodes with connection sizes
-	degrees = session.run("MATCH (c:Employee) RETURN c.fullName, size( (c)-[:appreciation]-() ) AS degree ORDER BY degree DESC")
+	degrees = session.run("MATCH (c:Employee) RETURN id(c), size( (c)-[:appreciation]-() ) AS degree ORDER BY degree DESC")
 
 	#prepare data for chart representation
 	data = {}
@@ -31,7 +31,7 @@ def calculateBetweennessCentrality(session):
 	print "betweenness centrality:"
 
 	#find all the nodes using shortestpaths in network.
-	degrees = session.run("MATCH p=allShortestPaths((source:Employee)-[:appreciation*]-(target:Employee)) UNWIND nodes(p)[1..-1] as n RETURN n.fullName, count(*) as betweenness order by betweenness desc")
+	degrees = session.run("MATCH p=allShortestPaths((source:Employee)-[:appreciation*]-(target:Employee)) UNWIND nodes(p)[1..-1] as n RETURN id(n), count(*) as betweenness order by betweenness desc")
 
 	#prepare data for chart representation.
 	data = {}
@@ -49,7 +49,7 @@ def calculateClosenessCentrality(session):
 	"""
 	print "closeness centrality:"
 	# find nodes with closeness values using shortestpaths
-	degrees = session.run("MATCH (a:Employee), (b:Employee) WHERE a<>b WITH length(shortestPath((a)-[]-(b))) AS dist, a, b RETURN DISTINCT  a.fullName, sum(1.0/dist) AS close_central ORDER BY close_central DESC ")
+	degrees = session.run("MATCH (a:Employee), (b:Employee) WHERE a<>b WITH length(shortestPath((a)-[]-(b))) AS dist, a, b RETURN DISTINCT  id(a), sum(1.0/dist) AS close_central ORDER BY close_central DESC ")
 	
 	#prepare data for chart representation.
 	data = {}
@@ -90,7 +90,7 @@ def calculatePageRankCentrality(session):
 	session.run("UNWIND range(1,10) AS round MATCH (n:Employee) WHERE rand() < 0.1  MATCH (n:Employee)-[:appreciation*..10]->(m:Employee) SET m.rank = coalesce(m.rank,0) + 1")
 
 	# get the ranks of each node 
-	degrees = session.run("MATCH (n:Employee) WHERE n.rank is not null return n.fullName, n.rank order by n.rank desc ")
+	degrees = session.run("MATCH (n:Employee) WHERE n.rank is not null return id(n), n.rank order by n.rank desc ")
 	
 	#prepare data for chart representation.
 	data = {}
@@ -107,7 +107,7 @@ def calculatePageRankCentralityUsingNetworkX(session):
 		calculates pagerank using Neo4j session.
 	"""
 	print "page rank using networkx:"
-	results = cypher.run("MATCH (a:Employee)-[r:appreciation]-(b:Employee) RETURN a.fullName, b.fullName,r", conn="http://neo4j:123456@localhost:7474/db/data")
+	results = cypher.run("MATCH (a:Employee)-[r:appreciation]-(b:Employee) RETURN id(a), id(b),r", conn="http://neo4j:123456@localhost:7474/db/data")
 	g = results.get_graph()
 	data = nx.pagerank_numpy(g)
 	print data
